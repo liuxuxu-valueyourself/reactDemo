@@ -1,4 +1,5 @@
 import React,{Component,Fragment} from 'react';
+import CuteGirlItem from './cuteGirlItem';
 class App extends Component {
   constructor(props) {
     super(props);
@@ -15,10 +16,11 @@ class App extends Component {
         <ul>
           {
             this.state.list.map((item,index) => {
-              return <li key={index}>
-                {item}
-                <button onClick={this.removeList.bind(this,index)}>删除</button>
-                </li>
+              return (
+                <div key={index}>
+                  <CuteGirlItem content={item} index={index} remove={this.removeList.bind(this)}/>
+                </div>
+                )
             })
           }
         </ul>

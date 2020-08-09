@@ -5,6 +5,16 @@ class CuteGirlItem extends Component {
     this.handerClick = this.handerClick.bind(this);
   }
   state = {  }
+
+  //生命周期对组件的性能优化
+  shouldComponentUpdate(nextProps,nextState) {
+    if(nextProps !== this.props.content) {
+      return false;
+    }else {
+      return true;
+    }
+  }
+
   render() { 
     return ( 
       <li>
